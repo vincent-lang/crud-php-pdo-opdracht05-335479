@@ -91,14 +91,14 @@ $result = $statement->fetch(PDO::FETCH_OBJ);
         </select>
         <br>
         <label for="lidmaatschap">Selecteer een lidmaatschap:</label>
-        <input type="radio" name="lidmaatschap" id="comfort" value="Comfort" value="<?= $result->LM ?>" required>Comfort
-        <input type="radio" name="lidmaatschap" id="premium" value="Premium" value="<?= $result->LM ?>" required>Premium
-        <input type="radio" name="lidmaatschap" id="all_in" value="All in" value="<?= $result->LM ?>" required>All in
+        <input type="radio" name="lidmaatschap" id="comfort" value="Comfort" required>Comfort
+        <input type="radio" name="lidmaatschap" id="premium" value="Premium" required>Premium
+        <input type="radio" name="lidmaatschap" id="all_in" value="All in" required>All in
         <br>
         <br>
         <label for="looptijd">Looptijd:</label>
-        <input type="radio" name="looptijd" id="jaarlidmaatschap" value="Jaarlidmaatschap" value="<?= $result->LT ?>" required>Jaarlidmaatschap
-        <input type="radio" name="looptijd" id="flex_optie" value="Flex optie" value="<?= $result->LT ?>" required>Flex optie
+        <input type="radio" name="looptijd" id="jaarlidmaatschap" value="Jaarlidmaatschap" required>Jaarlidmaatschap
+        <input type="radio" name="looptijd" id="flex_optie" value="Flex optie" required>Flex optie
         <br>
         <br>
         <label for="">Selecteer je extra's:</label>
