@@ -16,31 +16,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     try {
 
-        $sql = "UPDATE Afspraak
-            Set     blue = :blue,
-                    pink = :pink,
-                    purple = :purple,
-                    red = :red,
-                    tel = :tel,
+        $sql = "UPDATE Inschrijving
+            Set     lidmaatschap = :lidmaatschap,
+                    looptijd = :looptijd,
+                    sportswater = :sportswater,
+                    coach = :coach,
+                    intro = :intro,
                     email = :email,
-                    datum = :datum,
-                    nagelbijt = :nagelbijt,
-                    luxemanicure = :luxemanicure,
-                    nagelreparatie = :nagelreparatie
+                    locations = :locations
                 WHERE   Id = :id";
 
         $statement = $pdo->prepare($sql);
         $statement->bindValue(":id", $_POST["id"], PDO::PARAM_INT);
-        $statement->bindValue(":blue", $_POST["blue"], PDO::PARAM_STR);
-        $statement->bindValue(":pink", $_POST["pink"], PDO::PARAM_STR);
-        $statement->bindValue(":purple", $_POST["purple"], PDO::PARAM_STR);
-        $statement->bindValue(":red", $_POST["red"], PDO::PARAM_STR);
-        $statement->bindValue(":tel", $_POST["tel"], PDO::PARAM_STR);
+        $statement->bindValue(":lidmaatschap", $_POST["lidmaatschap"], PDO::PARAM_STR);
+        $statement->bindValue(":looptijd", $_POST["looptijd"], PDO::PARAM_STR);
+        $statement->bindValue(":sportswater", $_POST["sportswater"], PDO::PARAM_STR);
+        $statement->bindValue(":coach", $_POST["coach"], PDO::PARAM_STR);
+        $statement->bindValue(":intro", $_POST["intro"], PDO::PARAM_STR);
         $statement->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
-        $statement->bindValue(":datum", $_POST["datum"], PDO::PARAM_STR);
-        $statement->bindValue(":nagelbijt", $_POST["nagelbijt"], PDO::PARAM_STR);
-        $statement->bindValue(":luxemanicure", $_POST["luxemanicure"], PDO::PARAM_STR);
-        $statement->bindValue(":nagelreparatie", $_POST["nagelreparatie"], PDO::PARAM_STR);
+        $statement->bindValue(":locations", $_POST["locations"], PDO::PARAM_STR);
 
         $statement->execute();
 
@@ -55,17 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $sql = "SELECT Id
-              ,blue as B
-              ,pink as PI
-              ,purple as PU
-              ,red as R
-              ,tel as T
+              ,lidmaatschap as LM
+              ,looptijd as LT
+              ,sportswater as SW
+              ,coach as C
+              ,intro as I
               ,email as E
-              ,datum as D
-              ,nagelbijt as NB
-              ,luxemanicure as LM
-              ,nagelreparatie as NR
-        FROM Afspraak
+              ,locations as L
+        FROM Inschrijving
         WHERE Id = :Id";
 
 $statement = $pdo->prepare($sql);
@@ -88,41 +79,39 @@ $result = $statement->fetch(PDO::FETCH_OBJ);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/anon.png" type="image/x-icon">
-    <title>Nagelstudio Chantal</title>
+    <title>BASIC-FIT Utrecht</title>
 </head>
-<body>
-    <h3>Bling Bling Nagelstudio Chantal</h3>
 
-    <form action="update.php" method="post">
-        <fieldset>
-        <p>Kies 4 basis kleuren voor uw nagels:</p>
-        <label for="blue">color1:</label>
-        <input type="color" name="blue" id="blue" value="<?= $result->B ?>">
-        <label for="pink">color2:</label>
-        <input type="color" name="pink" id="pink" value="<?= $result->PI ?>">
-        <label for="purple">color3:</label>
-        <input type="color" name="purple" id="purple" value="<?= $result->PU ?>">
-        <label for="red">color4:</label>
-        <input type="color" name="red" id="red" value="<?= $result->R ?>">
+<body>
+    <h1>BASIC-FIT Utrecht</h1>
+    <form action="create.php" method="post">
+        <p>Kies je homeclub:</p>
+        <select name="locations" id="locations" value="<?= $result->L ?>" required>
+            <option value="moreelsehoek_2">moreelsehoek_2</option>
+        </select>
         <br>
-        <label for="tel">Uw telefoonnummer:</label>
-        <input type="tel" name="tel" id="tel" pattern=".{3,16}" placeholder="+31 6 30694820" required value="<?= $result->T ?>">
+        <label for="lidmaatschap">Selecteer een lidmaatschap:</label>
+        <input type="radio" name="lidmaatschap" id="comfort" value="<?= $result->LM ?>" required>Comfort
+        <input type="radio" name="lidmaatschap" id="premium" value="<?= $result->LM ?>" required>Premium
+        <input type="radio" name="lidmaatschap" id="all_in" value="<?= $result->LM ?>" required>All in
         <br>
-        <label for="email">Uw e-mailadres:</label>
-        <input type="email" name="email" id="email" placeholder="randomperson@example.com" required value="<?= $result->E ?>">
         <br>
-        <label for="datum">Afspraak datum:</label>
-        <input type="datetime-local" name="datum" id="datum" required value="<?= $result->D ?>">
+        <label for="looptijd">Looptijd:</label>
+        <input type="radio" name="looptijd" id="jaarlidmaatschap" value="<?= $result->LT ?>" required>Jaarlidmaatschap
+        <input type="radio" name="looptijd" id="flex_optie" value="<?= $result->LT ?>" required>Flex optie
         <br>
-        <label for="nagelbijt">Nagelbijt arrangement (termijnbetaling mogelijk) €180</label>
-        <input type="checkbox" name="nagelbijt" id="nagelbijt" value="<?= $result->NB ?>">
-        <label for="luxemanicure">Luxe manicure (massage en handpakking) €30,00</label>
-        <input type="checkbox" name="luxemanicure" id="luxemanicure" value="<?= $result->LM ?>">
-        <label for="nagelreparatie">Nagelreparatie per nagel (in eerste week gratis) €5,00</label>
-        <input type="checkbox" name="nagelreparatie" id="nagelreparatie" value="<?= $result->NR ?>">
         <br>
-            <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
-            <input id="submit" type="submit" value="Sla op">
+        <label for="">Selecteer je extra's:</label>
+        <input type="checkbox" name="sportswater" id="sportswater" value="<?= $result->SW ?>">Yanga sportswater € 2,50 per 4 weken
+        <input type="checkbox" name="coach" id="coach" value="<?= $result->C ?>">Personal online coach € 60,00 eenmalig
+        <input type="checkbox" name="intro" id="intro" value="<?= $result->I ?>">Personal training intro € 25,00 eenmalig
+        <br>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" value="<?= $result->E ?>">
+        <br>
+        <input id="submit" type="submit" value="Sla op">
+        <input id="reset" type="reset" value="reset">
+        <input type="hidden" name="hidden" value="datetime-local">
         </fieldset>
     </form>
 </body>

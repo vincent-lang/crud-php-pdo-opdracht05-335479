@@ -18,7 +18,7 @@ try {
     echo $e->getMessage();
 }
 
-$sql = "DELETE FROM Afspraak
+$sql = "DELETE FROM Inschrijving
         WHERE Id = :SQLId";
 
 $statement = $pdo->prepare($sql);
