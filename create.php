@@ -14,39 +14,36 @@ try {
 }
 
 $sql = "INSERT INTO Afspraak (Id
-                        ,blue
-                        ,pink
-                        ,purple
-                        ,red
-                        ,tel
-                        ,email
-                        ,datum
-                        ,nagelbijt
-                        ,luxemanicure
-                        ,nagelreparatie)
+                        ,comfort
+                        ,premium
+                        ,all_in
+                        ,jaarlidmaatschap
+                        ,flex_optie
+                        ,sportswater
+                        ,coach
+                        ,intro
+                        ,email)
             VALUES      (NULL
-                        ,:blue
-                        ,:pink
-                        ,:purple
-                        ,:red
-                        ,:tel
-                        ,:email
-                        ,:datum
-                        ,:nagelbijt
-                        ,:luxemanicure
-                        ,:nagelreparatie);";
+                        ,:comfort
+                        ,:premium
+                        ,:all_in
+                        ,:jaarlidmaatschap
+                        ,:flex_optie
+                        ,:sportswater
+                        ,:coach
+                        ,:intro
+                        ,:email);";
 $statement = $pdo->prepare($sql);
 
-$statement->bindValue(":blue", $_POST["blue"], PDO::PARAM_STR);
-$statement->bindValue(":pink", $_POST["pink"], PDO::PARAM_STR);
-$statement->bindValue(":purple", $_POST["purple"], PDO::PARAM_STR);
-$statement->bindValue(":red", $_POST["red"], PDO::PARAM_STR);
-$statement->bindValue(":tel", $_POST["tel"], PDO::PARAM_STR);
+$statement->bindValue(":comfort", $_POST["comfort"], PDO::PARAM_STR);
+$statement->bindValue(":premium", $_POST["premium"], PDO::PARAM_STR);
+$statement->bindValue(":all_in", $_POST["all_in"], PDO::PARAM_STR);
+$statement->bindValue(":jaarlidmaatschap", $_POST["jaarlidmaatschap"], PDO::PARAM_STR);
+$statement->bindValue(":flex_optie", $_POST["flex_optie"], PDO::PARAM_STR);
+$statement->bindValue(":sportswater", $_POST["sportswater"], PDO::PARAM_STR);
+$statement->bindValue(":coach", $_POST["coach"], PDO::PARAM_STR);
+$statement->bindValue(":intro", $_POST["intro"], PDO::PARAM_STR);
 $statement->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
-$statement->bindValue(":datum", $_POST["datum"], PDO::PARAM_STR);
-$statement->bindValue(":nagelbijt", $_POST["nagelbijt"], PDO::PARAM_STR);
-$statement->bindValue(":luxemanicure", $_POST["luxemanicure"], PDO::PARAM_STR);
-$statement->bindValue(":nagelreparatie", $_POST["nagelreparatie"], PDO::PARAM_STR);
 
 
 $statement->execute();
