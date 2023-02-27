@@ -14,15 +14,13 @@ try {
 }
 
 $sql = "SELECT Id
-            ,comfort
-            ,premium
-            ,all_in
-            ,jaarlidmaatschap
-            ,flex_optie
+            ,lidmaatschap
+            ,looptijd
             ,sportswater
             ,coach
             ,intro
             ,email
+            ,locations
         FROM Inschrijving
         ORDER BY Id ASC";
 
@@ -36,15 +34,13 @@ $rows = "";
 foreach ($result as $info) {
     $rows .= "<tr>
                 <td>$info->Id</td>
-                <td>$info->comfort</td>
-                <td>$info->premium</td>
-                <td>$info->all_in</td>
-                <td>$info->jaarlidmaatschap</td>
-                <td>$info->flex_optie</td>
+                <td>$info->lidmaatschap</td>
+                <td>$info->looptijd</td>
                 <td>$info->sportswater</td>
                 <td>$info->coach</td>
                 <td>$info->intro</td>
                 <td>$info->email</td>
+                <td>$info->locations</td>
                 <td>
                     <a href='delete.php?id={$info->Id}'>
                         <img src='img/b_drop.png' alt='Drop'</img>
@@ -66,15 +62,13 @@ foreach ($result as $info) {
 <table border="1">
     <thead>
         <th>Id</th>
-        <th>comfort</th>
-        <th>premium</th>
-        <th>all_in</th>
-        <th>jaarlidmaatschap</th>
-        <th>flex_optie</th>
+        <th>lidmaatschap</th>
+        <th>looptijd</th>
         <th>sportswater</th>
         <th>coach</th>
         <th>intro</th>
         <th>email</th>
+        <th>locations</th>
         <th></th>
         <th></th>
     </thead>

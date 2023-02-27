@@ -14,19 +14,19 @@
     <h1>BASIC-FIT Utrecht</h1>
     <form action="create.php" method="post">
         <p>Kies je homeclub:</p>
-        <select name="" id="" required>
-            <option value=""></option>
+        <select name="locations" id="locations" required>
+            <option value="moreelsehoek_2">moreelsehoek_2</option>
         </select>
         <br>
-        <label for="1">Selecteer een lidmaatschap:</label>
-        <input type="radio" name="1" id="comfort" required>Comfort
-        <input type="radio" name="1" id="premium" required>Premium
-        <input type="radio" name="1" id="all_in" required>All in
+        <label for="lidmaatschap">Selecteer een lidmaatschap:</label>
+        <input type="radio" name="lidmaatschap" id="comfort" required>Comfort
+        <input type="radio" name="lidmaatschap" id="premium" required>Premium
+        <input type="radio" name="lidmaatschap" id="all_in" required>All in
         <br>
         <br>
-        <label for="2">Looptijd:</label>
-        <input type="radio" name="2" id="jaarlidmaatschap" required>Jaarlidmaatschap
-        <input type="radio" name="2" id="flex_optie" required>Flex optie
+        <label for="looptijd">Looptijd:</label>
+        <input type="radio" name="looptijd" id="jaarlidmaatschap" required>Jaarlidmaatschap
+        <input type="radio" name="looptijd" id="flex_optie" required>Flex optie
         <br>
         <br>
         <label for="">Selecteer je extra's:</label>
