@@ -14,17 +14,16 @@ try {
 }
 
 $sql = "SELECT Id
-            ,blue
-            ,pink
-            ,purple
-            ,red
-            ,tel
+            ,comfort
+            ,premium
+            ,all_in
+            ,jaarlidmaatschap
+            ,flex_optie
+            ,sportswater
+            ,coach
+            ,intro
             ,email
-            ,datum
-            ,nagelbijt
-            ,luxemanicure
-            ,nagelreparatie
-        FROM Afspraak
+        FROM Inschrijving
         ORDER BY Id ASC";
 
 $statement = $pdo->prepare($sql);
@@ -37,16 +36,15 @@ $rows = "";
 foreach ($result as $info) {
     $rows .= "<tr>
                 <td>$info->Id</td>
-                <td>$info->blue</td>
-                <td>$info->pink</td>
-                <td>$info->purple</td>
-                <td>$info->red</td>
-                <td>$info->tel</td>
+                <td>$info->comfort</td>
+                <td>$info->premium</td>
+                <td>$info->all_in</td>
+                <td>$info->jaarlidmaatschap</td>
+                <td>$info->flex_optie</td>
+                <td>$info->sportswater</td>
+                <td>$info->coach</td>
+                <td>$info->intro</td>
                 <td>$info->email</td>
-                <td>$info->datum</td>
-                <td>$info->nagelbijt</td>
-                <td>$info->luxemanicure</td>
-                <td>$info->nagelreparatie</td>
                 <td>
                     <a href='delete.php?id={$info->Id}'>
                         <img src='img/b_drop.png' alt='Drop'</img>
@@ -63,8 +61,8 @@ foreach ($result as $info) {
 ?>
 
 
-<h3>Tabel achtbaan</h3>
-<a href="index.php"><button>Nieuwe afspraak</button></a>
+<h3>Tabel Inschrijving</h3>
+<a href="index.php"><button>opnieuw inschrijven</button></a>
 <table border="1">
     <thead>
         <th>Id</th>
@@ -77,7 +75,6 @@ foreach ($result as $info) {
         <th>Datum</th>
         <th>Nagelbijt</th>
         <th>Luxemanicure</th>
-        <th>Nagelreparatie</th>
         <th></th>
         <th></th>
     </thead>
