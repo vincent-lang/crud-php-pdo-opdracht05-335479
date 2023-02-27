@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/anon.png" type="image/x-icon">
-    <title>Nagelstudio Chantal</title>
+    <title>BASIC-FIT Utrecht</title>
 </head>
 <body>
-    <h1>Bling Bling Nagelstudio Chantal</h1>
+    <h1>BASIC-FIT Utrecht</h1>
     <form action="create.php" method="post">
-        <p>Kies 4 basis kleuren voor uw nagels:</p>
-        <label for="blue">color1:</label>
-        <input type="color" name="blue" id="blue" value="#0000ff">
-        <label for="pink">color2:</label>
-        <input type="color" name="pink" id="pink" value="#ffc0cb">
-        <label for="purple">color3:</label>
-        <input type="color" name="purple" id="purple" value="#A020F0">
-        <label for="red">color4:</label>
-        <input type="color" name="red" id="red" value="#ff0000">
+        <p>Kies je homeclub:</p>
+        <select name="" id="" required>
+            <option value=""></option>
+        </select>
+        <label for="">Selecteer een lidmaatschap:</label>
+        <input type="radio" name="Comfort" id="Comfort" required>Comfort
+        <input type="radio" name="Premium" id="Premium" required>Premium
+        <input type="radio" name="All_in" id="All_in" required>All in
         <br>
         <label for="tel">Uw telefoonnummer:</label>
         <input type="tel" name="tel" id="tel" pattern=".{3,16}" placeholder="+31 6 30694820" required>
