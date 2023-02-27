@@ -19,14 +19,14 @@
         </select>
         <br>
         <label for="lidmaatschap">Selecteer een lidmaatschap:</label>
-        <input type="radio" name="lidmaatschap" id="comfort" required>Comfort
-        <input type="radio" name="lidmaatschap" id="premium" required>Premium
-        <input type="radio" name="lidmaatschap" id="all_in" required>All in
+        <input type="radio" name="lidmaatschap" id="comfort" value="Comfort" required>Comfort
+        <input type="radio" name="lidmaatschap" id="premium" value="Premium" required>Premium
+        <input type="radio" name="lidmaatschap" id="all_in" value="All in" required>All in
         <br>
         <br>
         <label for="looptijd">Looptijd:</label>
-        <input type="radio" name="looptijd" id="jaarlidmaatschap" required>Jaarlidmaatschap
-        <input type="radio" name="looptijd" id="flex_optie" required>Flex optie
+        <input type="radio" name="looptijd" id="jaarlidmaatschap" value="Jaarlidmaatschap" required>Jaarlidmaatschap
+        <input type="radio" name="looptijd" id="flex_optie" value="Flex optie" required>Flex optie
         <br>
         <br>
         <label for="">Selecteer je extra's:</label>
