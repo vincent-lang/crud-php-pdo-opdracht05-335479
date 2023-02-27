@@ -66,15 +66,15 @@ foreach ($result as $info) {
 <table border="1">
     <thead>
         <th>Id</th>
-        <th>color1</th>
-        <th>color2</th>
-        <th>color3</th>
-        <th>color4</th>
-        <th>Tel</th>
-        <th>Email</th>
-        <th>Datum</th>
-        <th>Nagelbijt</th>
-        <th>Luxemanicure</th>
+        <th>comfort</th>
+        <th>premium</th>
+        <th>all_in</th>
+        <th>jaarlidmaatschap</th>
+        <th>flex_optie</th>
+        <th>sportswater</th>
+        <th>coach</th>
+        <th>intro</th>
+        <th>email</th>
         <th></th>
         <th></th>
     </thead>
