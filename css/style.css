@@ -430,6 +430,8 @@ html, body {
   
   h1 {
     font-size: 4rem;
+    background-color: orange;
+    color: white;
   }
   
   h2 {
