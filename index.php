@@ -24,9 +24,9 @@
         <input type="radio" name="1" id="all_in" required>All in
         <br>
         <br>
-        <label for="1">Looptijd:</label>
-        <input type="radio" name="1" id="jaarlidmaatschap" required>Jaarlidmaatschap
-        <input type="radio" name="1" id="flex_optie" required>Flex optie
+        <label for="2">Looptijd:</label>
+        <input type="radio" name="2" id="jaarlidmaatschap" required>Jaarlidmaatschap
+        <input type="radio" name="2" id="flex_optie" required>Flex optie
         <br>
         <br>
         <label for="">Selecteer je extra's:</label>
